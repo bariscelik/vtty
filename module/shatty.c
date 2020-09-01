@@ -205,7 +205,7 @@ static const struct tty_operations serial_ops = {
 static const struct tty_port_operations null_ops = { };
 static struct tty_driver *vtty_driver;
 
-static int __init tiny_init(void)
+static int __init vtty_init(void)
 {
     int retval;
 
@@ -248,7 +248,7 @@ static int __init tiny_init(void)
     return retval;
 }
 
-static void __exit tiny_exit(void)
+static void __exit vtty_exit(void)
 {
     int err=0;
 
@@ -261,5 +261,5 @@ static void __exit tiny_exit(void)
         kfree(vtty);
 }
 
-module_init(tiny_init);
-module_exit(tiny_exit);
+module_init(vtty_init);
+module_exit(vtty_exit);
